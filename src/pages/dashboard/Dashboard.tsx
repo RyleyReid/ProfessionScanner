@@ -17,7 +17,7 @@ export const Dashboard = () => {
       >
         {realms.map(realm => (
           <option key={realm.id} value={realm.id}>
-            {realm.realms[0].name.en_US}
+            {realm.realms.map(r => r.name.en_US).join(', ')} (Connected Realm ID: {realm.id})
           </option>
         ))}
       </select>
