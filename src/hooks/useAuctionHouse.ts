@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { fetchOAuthToken, WoWEndpoints } from '../endpoints/endpoints';
+import { fetchOAuthToken } from '../endpoints/endpoints';
+import { WoWEndpoints, WoWParams } from '../endpoints/urls';
 
 interface AuctionData {
   // Define your auction data interface here
@@ -31,7 +32,8 @@ export const useAuctionHouse = (initialRealmId: number) => {
         const response = await axios.get(WoWEndpoints.auctionHouse(realmId), {
           headers: {
             'Authorization': `Bearer ${token}`
-          }
+          },
+          params: WoWParams.classic
         });
         
         setAuctionData(response.data);
