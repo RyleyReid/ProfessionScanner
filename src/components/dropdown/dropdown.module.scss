@@ -1,25 +1,92 @@
-@import '../../scss/sizes.scss';
+@import '../../scss/base.scss';
 
 .dropdownContainer {
   display: flex;
   flex-direction: column;
   gap: $padding-small;
+  position: relative;
 }
 
 .label {
   font-size: $font-size;
   font-weight: $font-weight-normal;
+  color: $text-color;
 }
 
-.select {
+.customSelect {
+  position: relative;
+  width: 100%;
+}
+
+.selectedValue {
   padding: $padding-10;
   border-radius: $border-radius-slightly-round;
   border: $border-size solid;
+  border-color: $border-color;
   font-size: $font-size;
+  color: $text-color;
   min-height: $input-min-height;
-  width: 100%;
-  
+  width: $full;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.optionsContainer {
+  position: absolute;
+  top: $full;
+  left: 0;
+  right: 0;
+  border: $border-size solid;
+  border-radius: $border-radius-slightly-round;
+  border-color: $border-color;
+  background-color: $white-color;
+  z-index: 1000;
+  margin-top: $margin-2;
+}
+
+.searchInput {
+  width: $full;
+  padding: $padding-10;
+  border: none;
+  border-bottom: $border-size solid;
+  font-size: $font-size;
+  box-sizing: border-box;
+
   &:focus {
     outline: none;
   }
+}
+
+.optionsList {
+  max-height: 200px;
+  overflow-y: auto;
+
+  > div:nth-child(odd) {
+    background-color: $light-gray-color;
+  }
+  
+  > div:nth-child(even) {
+    background-color: $white-color;
+  }
+}
+
+.option {
+  padding: $padding-10;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  &.selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.noResults {
+  padding: $padding-10;
+  text-align: center;
+  color: grey;
 }

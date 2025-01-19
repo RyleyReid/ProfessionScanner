@@ -27,8 +27,8 @@ export const Dashboard = () => {
         placeholder="Choose a realm..."
       />
 
-      {auctionLoading && <div>Loading auction data...</div>}
-      {auctionError && <div>Error: {auctionError}</div>}
+      {auctionLoading && <p>Loading auction data...</p>}
+      {auctionError && <p>Error: {auctionError}</p>}
       {auctionData && (
         <pre>{JSON.stringify(auctionData, null, 2)}</pre>
       )}
