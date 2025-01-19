@@ -1,6 +1,8 @@
+import React from 'react';
 import { useRealms } from '../../hooks/useRealms';
 import { useAuctionHouse } from '../../hooks/useAuctionHouse';
 import { PageWrapper } from 'components/pageWrapper/pageWrapper';
+import { Dropdown, DropdownOption } from 'components/dropdown/dropdown';
 
 export const Dashboard = () => {
   const { realms, loading: realmsLoading, error: realmsError } = useRealms();
@@ -9,19 +11,21 @@ export const Dashboard = () => {
   if (realmsLoading) return <div>Loading realms...</div>;
   if (realmsError) return <div>Error loading realms: {realmsError}</div>;
 
+  const realmOptions: DropdownOption[] = realms.map(realm => ({
+    name: `${realm.realms.map(r => r.name.en_US).join(', ')} (ID: ${realm.id})`,
+    value: realm.id
+  }));
+
   return (
     <PageWrapper>
       <h1>Auction House Data</h1>
-      <select 
-        value={realmId} 
-        onChange={(e) => setRealmId(Number(e.target.value))}
-      >
-        {realms.map(realm => (
-          <option key={realm.id} value={realm.id}>
-            {realm.realms.map(r => r.name.en_US).join(', ')} (Connected Realm ID: {realm.id})
-          </option>
-        ))}
-      </select>
+      <Dropdown
+        options={realmOptions}
+        selectedValue={realmId}
+        onValueChange={setRealmId}
+        label="Select Realm"
+        placeholder="Choose a realm..."
+      />
 
       {auctionLoading && <div>Loading auction data...</div>}
       {auctionError && <div>Error: {auctionError}</div>}
