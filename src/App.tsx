@@ -1,10 +1,9 @@
-import React from 'react';
-import { AppRoutes } from './routing/routing';
-import './App.css';
+import { AppRoutes } from "./routing/routing";
+import "./app.scss";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <AppRoutes />
     </div>
   );

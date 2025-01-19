@@ -1,0 +1,132 @@
+$no-padding: 0px;
+$padding-xsmall: 0.25rem;
+$padding-small: 0.5rem;
+$padding-medium: 0.75rem;
+$padding-large: 1rem;
+$padding-1: 1px;
+$padding-3: 3px;
+$padding-4: 4px;
+$padding-5: 5px;
+$padding-6: 6px;
+$padding-8: 8px;
+$padding-10: 10px;
+$padding-12: 12px;
+$padding-13: 13px;
+$padding-15: 15px;
+$padding-16: 16px;
+$padding-20: 20px;
+$padding-25: 25px;
+$padding-30: 30px;
+$padding-35: 35px;
+$padding-40: 40px;
+$padding-50: 50px;
+$padding-60: 60px;
+
+$radius-small: 0.5rem;
+$radius: 1rem;
+$radius-large: 3rem;
+
+$margin-subtitle-spacing: 20px;
+$no-margin: 0px;
+$margin-small: 0.5rem;
+$margin-medium: 0.75rem;
+$margin-large: 1rem;
+$margin-2: 2px;
+$margin-5: 5px;
+$margin-6: 6px;
+$margin-10: 10px;
+$margin-15: 15px;
+$margin-20: 20px;
+$margin-25: 25px;
+$margin-30: 30px;
+$margin-35: 35px;
+$margin-40: 40px;
+$margin-45: 45px;
+$margin-50: 50px;
+$margin-60: 60px;
+
+$font-size: 1rem;
+$border-size: 1px;
+$border-size-slightly-big: 2px;
+$border-radius-slightly-round: 5px;
+$border-radius-round-slight: 10px;
+$border-radius-round-mid: 12px;
+$border-radius-round: 25px;
+$border-radius-very-round: 55px;
+
+
+$spacing-small: 0.5rem;
+$spacing-medium: 0.75rem;
+$spacing-large: 1rem;
+
+$line-height-small: 1rem;
+$line-break-height: 1rem;
+// Media Query Sizing
+$tablet-min-breakpoint: 768px;
+$desktop-min-breakpoint: 1024px;
+$tablet-max-breakpoint: calc(#{$desktop-min-breakpoint} - 1px);
+$min-button-width: 300px;
+$narrow-screen-width: 408px;
+
+// Font sizing
+// Standard base
+:root {
+    font-size: 16px;
+}
+
+//make app full height
+html, body, #root{
+    height: 100%;
+}
+
+
+// Font sizes
+$font-size-h1: 2.5rem;
+$font-size-h2: 1.75rem;
+$font-size-h3: 1.5rem;
+$font-size-h4: 1.25rem;
+$font-size-h5: 1.125rem;
+$font-size-largest: 1.875rem; // 30px
+$font-size-larger : 1.563rem; // 25px
+$font-size-large: 1.25rem; // 20px
+$font-size-slightly-large: 1.125rem; // 18px
+$font-size: 1rem; // 16px
+$font-size-slightly-smallText: 0.875rem; // 14px
+$font-size-smallText: 0.85rem; 
+$font-size-smallerText: 0.75rem; // 12px
+$font-size-microText: 0.5rem; // 8px
+
+// Form sizes
+$input-font-size: 1.125rem;
+$input-min-height: 48px;
+$button-radius: 100px;
+$button-horizontal-padding: 30px;
+$input-min-height-small: 32px;
+$section-max-width: 768px;
+//make app full height
+html, body, #root{
+    height: 100%;
+}
+
+// Font Weights
+$font-weight-thin: 400;
+$font-weight-normal: 500;
+$font-weight-slightly-bold: 600;
+$font-weight-bold: 700;
+$font-weight-bolder: 900;
+
+$hide: none;
+$full: 100%;
+$half: 50%;
+
+// Sidebar width
+$sidebar-width: 240px;
+
+// Button styles
+$button-height: 40px;
+
+// Border Bottom
+$border-bottom-width: 1.5px;
+
+// Modal
+$modal-width: 80%;
