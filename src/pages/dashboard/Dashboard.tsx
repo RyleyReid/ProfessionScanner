@@ -1,5 +1,6 @@
 import { useRealms } from '../../hooks/useRealms';
 import { useAuctionHouse } from '../../hooks/useAuctionHouse';
+import { PageWrapper } from 'components/pageWrapper/pageWrapper';
 
 export const Dashboard = () => {
   const { realms, loading: realmsLoading, error: realmsError } = useRealms();
@@ -9,7 +10,7 @@ export const Dashboard = () => {
   if (realmsError) return <div>Error loading realms: {realmsError}</div>;
 
   return (
-    <div>
+    <PageWrapper>
       <h1>Auction House Data</h1>
       <select 
         value={realmId} 
@@ -27,6 +28,6 @@ export const Dashboard = () => {
       {auctionData && (
         <pre>{JSON.stringify(auctionData, null, 2)}</pre>
       )}
-    </div>
+    </PageWrapper>
   );
 }; 
